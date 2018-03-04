@@ -1,0 +1,10 @@
+
+{% for item in result_set %}
+{% empty %}
+<h2> There is no result. <h2>
+{% endfor %}
+
+{% for item in result_set %}
+<h1> {{item.company_name}} <h1>
+<h3> {{item.company_id}} <h3>
+{% endfor %}

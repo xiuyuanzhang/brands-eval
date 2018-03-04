@@ -1,0 +1,21 @@
+<form method="post">
+  {% csrf_token %}
+
+  {{ form.non_field_errors }}
+
+  {{ form.source.errors }}
+  {{ form.source }}
+
+  <table>
+
+      <tr>
+        <th>{{ form.brand_name.label_tag }}</th>
+        <td>
+          {{ form.brand_name.errors }}
+          {{ form.brand_name }}
+        </td>
+      </tr>
+  </table>
+
+  <button type="submit">Submit</button>
+</form>
