@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--This is for homepage-->
+<!-- This is for the detail result page -->
 
 <html>
 <title>Ethical Consumer| homepage</title>
@@ -28,6 +28,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: 'EB Garamond', serif;}
 .myLink {display: none}
 </style>
 
+<!--Navigation Bar-->
 <div class="w3-display-container">
   <div class="w3-bar w3-top w3-white w3-padding w3-card" style="letter-spacing:4px;">
     <a href="{% url 'search' %}" class="w3-bar-item w3-button">Ethical Consumer</a>
@@ -39,49 +40,42 @@ body,h1,h2,h3,h4,h5,h6 {font-family: 'EB Garamond', serif;}
       <a href="{% url 'search' %}#contact" class="w3-bar-item w3-button">Contact Us</a>
     </div>
   </div>
-  </div>
+</div>
 
 <body class= "w3-light-grey" >
 
-<!--JS-->
+
 <head>
- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
- <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!--JS-->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 
 <div class="w3-container" style=" margin-left: 50px; margin-top: 0px; margin-bottom: 60px;">
-<table width = "100%" border = "0" cellspacing="1" cellpadding="2">
-<tr align = "left">
-<td class="borderBottom"><a href = "javascript;:" onClick = "foldinout('company_rating')"></a>
-<div class="w3-container" style=" margin-left: 120; margin-top: 50px; margin-bottom: 10px;">
-<h2> Mother Company:</h2> <h1> <strong>{{rating.company_name}}</strong> </h1>
-<h2> Company's Overall Rating:</h2> <h1> <strong>{{rating.rating}}</strong> </h1>
-</div>
-</td>
+    <table width = "100%" border = "0" cellspacing="1" cellpadding="2">
+        <tr align = "left">
+            <td class="borderBottom"><a href = "javascript;:" onClick = "foldinout('company_rating')"></a>
+                <div class="w3-container" style=" margin-left: 120; margin-top: 50px; margin-bottom: 10px;">
+                    <h2> Mother Company:</h2> <h1> <strong>{{rating.company_name}}</strong> </h1>
+                    <h2> Company's Overall Rating:</h2> <h1> <strong>{{rating.rating}}</strong> </h1>
+                </div>
+            </td>
 
-<td>
-<!--GRAPH COMPANY-->
-<div id='company_rating' class = "w3-center" style="padding-top: 85px;width: 900px; height: 550px; margin-left: 200px; display:block;" >
-{% load static %}
-    <script type="text/javascript" src = "{% static 'search/company_rating.js' %}"></script>
-</div>
-</td>
-
-
-
-</tr>
-
-
-<td class = "borderBottom">
-<div class="w3-container" style="margin-bottom: 10px;">
-
-</div>
-</td>
-
-<tr>
-    
-</tr>
-</table>
+            <td>
+                <!--GRAPH COMPANY-->
+                <div id='company_rating' class = "w3-center" style="padding-top: 85px;width: 900px; height: 550px; margin-left: 200px; display:block;" >
+                    {% load static %}
+                    <!--JS-->
+                    <script type="text/javascript" src = "{% static 'search/company_rating.js' %}">
+                    </script>
+                </div>
+            </td>
+        </tr>
+            <td class = "borderBottom">
+                <div class="w3-container" style="margin-bottom: 10px;">
+                </div>
+            </td>
+    </table>
 </div>
 
 
